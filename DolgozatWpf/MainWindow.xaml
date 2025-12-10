@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="dataGrid" Grid.Row="0"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <Label Content="Név:" Margin="5"/>
+            <TextBox x:Name="nev" Width="150" Margin="5"/>
+            <Label Content="Életkor:" Margin="5"/>
+            <TextBox x:Name="eletkor" Width="150" Margin="5"/>
+            <Label Content="Pontszam:" Margin="5"/>
+            <TextBox x:Name="pontszam" Width="150" Margin="5"/>
+        </StackPanel>
+        <StackPanel>
+            <Button Content="Hozzáadás" Margin="5" Padding="5" Width="80"/>
+            <Button Content="Mentés" Margin="5" Padding="5" Width="80"/>
+            
+        </StackPanel>
     </Grid>
 </Window>
