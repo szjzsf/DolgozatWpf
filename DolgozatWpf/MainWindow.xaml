@@ -23,7 +23,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
             <Button Content="Hozzáadás" Margin="5" Padding="5" Width="80" Click="hozzaadas"/>
-            <Button Content="Mentés" Margin="5" Padding="5" Width="80"/>
+            <Button Content="Mentés" Margin="5" Padding="5" Width="80" Click="mentes"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -59,7 +59,6 @@ namespace DolgozatWpf
                 && int.TryParse(pontszam.Text, out pontszama)
                 && pontszama>=0 && pontszama<=100)
             {
-                //jók a beviteli adatok
                 dolgozatok.Add(new Dolgozat(nev.Text, eletkora, pontszama));
                 dataGrid.ItemsSource = dolgozatok;
                 dataGrid.Items.Refresh();
@@ -68,6 +67,35 @@ namespace DolgozatWpf
             else
             {
                 MessageBox.Show("Nem megfelelő adatok a beviteli mezőkben!");
+            }
+        }
+
+        private void mentes(object sender, RoutedEventArgs e)
+        {
+            if (dolgozatok == null)
+            {
+                MessageBox.Show("Nincsenek dolgozatok!", "hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            string fajlba = "";
+            foreach (var d in dolgozatok)
+            {
+                fajlba += d.Nev + ";" + d.Eletkor + ";" + d.Pontszam + "\n";
+            }
+
+            try
+            {
+                File.WriteAllText("dolgozatok.txt", fajlba);
+                MessageBox.Show("Sikeres mentés!", "Infó", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (ArgumentException ae)
+            {
+                MessageBox.Show("Nem megfelelő argumentum", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (IOException ioe)
+            {
+                MessageBox.Show("Hibás fájlnév vagy elérési út", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
