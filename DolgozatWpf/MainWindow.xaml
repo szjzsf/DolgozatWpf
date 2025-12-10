@@ -21,8 +21,8 @@
             <Label Content="Pontszam:" Margin="5"/>
             <TextBox x:Name="pontszam" Width="150" Margin="5"/>
         </StackPanel>
-        <StackPanel>
-            <Button Content="Hozzáadás" Margin="5" Padding="5" Width="80"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <Button Content="Hozzáadás" Margin="5" Padding="5" Width="80" Click="hozzaadas"/>
             <Button Content="Mentés" Margin="5" Padding="5" Width="80"/>
         </StackPanel>
     </Grid>
